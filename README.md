@@ -77,30 +77,29 @@ The system uses a **Hierarchical Hybrid Architecture**:
 ### 1. Clone the Repository
 ```bash
 git clone [https://github.com/agatapurwa/insightswarm-enterprise-agent.git](https://github.com/agatapurwa/insightswarm-enterprise-agent.git)
-cd insightswarm-enterprise-agent```
+cd insightswarm-enterprise-agent
+```
 
 ### 2. Install Dependencies
 ```Bash
-pip install -r requirements.txt```
+pip install -r requirements.txt
+```
 
 ### 3. Set Up Environment
 Set your Google API Key in your environment variables:
-
-Bash
-
+```Bash
 export GOOGLE_API_KEY="your_api_key_here"
-4. Run the Agent
+```
+
+### 4. Run the Agent
 You can run the full simulation via the Jupyter Notebook:
+```Bash
+jupyter notebook insightswarm.ipynb```
 
-Bash
-
-jupyter notebook insightswarm.ipynb
 Run cells sequentially to initialize the database, setup agents, and execute the final demo.
 
-5. Deployment (Docker)
+### 5. Deployment (Docker)
 The project is container-ready. To build:
-
-Bash
-
+```Bash
 docker build -t insightswarm .
-docker run -p 8080:8080 insightswarm
+docker run -p 8080:8080 insightswarm```
