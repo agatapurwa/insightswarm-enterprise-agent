@@ -1,0 +1,16 @@
+{
+  "agent_name": "InsightSwarm_V2",
+  "runtime": "Vertex AI Agent Engine",
+  "scaling": {
+    "min_instances": 1,
+    "max_instances": 5
+  },
+  "security": {
+    "guardrails": "enabled",
+    "vpc_peering": "required"
+  },
+  "integrations": [
+    "sqlite_db",
+    "corporate_memory.txt"
+  ]
+}
