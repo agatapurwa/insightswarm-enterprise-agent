@@ -77,3 +77,77 @@ The system uses a **Hierarchical Hybrid Architecture**:
 ```bash
 git clone [https://github.com/agatapurwa/insightswarm-enterprise-agent.git](https://github.com/agatapurwa/insightswarm-enterprise-agent.git)
 cd insightswarm
+
+### 2. Install Dependencies
+Bash
+
+pip install -r requirements.txt
+
+### 3. Set Up Environment
+Set your Google API Key in your environment variables:
+
+Bash
+
+export GOOGLE_API_KEY="your_api_key_here"
+
+### 4. Run the Agent
+You can run the full simulation via the Jupyter Notebook:
+
+Bash
+
+jupyter notebook insightswarm.ipynb
+Run cells sequentially to initialize the database, setup agents, and execute the final demo.
+
+### 5. Deployment (Docker)
+The project is container-ready. To build:
+
+Bash
+
+docker build -t insightswarm .
+docker run -p 8080:8080 insightswarm
+📂 Repository Structure
+├── insightswarm.ipynb    # Main Logic & Agent Definitions
+├── agent_manifest.json   # Cloud Deployment Configuration
+├── Dockerfile            # Production Container Setup
+├── requirements.txt      # Dependencies
+├── sales_warehouse.db    # (Generated) SQLite Simulation Data
+├── dashboard.png         # (Generated) Visualization Artifact
+└── README.md             # Documentation
+🧪 Example Scenario
+User Query:
+
+"Analyze sales performance in the East region. Compare with our known history and generate a distribution chart."
+
+Agent Actions:
+
+Guardrails: Scan input for injection attacks (Passed).
+
+Memory Retrieval: Recalls "East region had supply chain issues in Q3."
+
+Data Engineer: Executes SELECT product, SUM(amount) FROM sales...
+
+Viz Loop:
+
+Expert generates code.
+
+Critic spots missing title.
+
+Expert fixes code.
+
+Critic approves.
+
+Output: Displays chart and strategic summary.
+
+FinOps: Logs cost: $0.00045.
+
+🔮 Future Improvements
+Integration with Vertex AI Vector Search for scalable RAG.
+
+Agent-to-Agent (A2A) Protocol to communicate with external vendor agents.
+
+Human-in-the-loop Slack integration for final approval of sensitive reports.
+
+📜 License
+This project is licensed under the CC-BY-SA 4.0 (Creative Commons Attribution-ShareAlike 4.0 International) license, as required by the Google AI Agents Intensive Capstone rules.
+
+Built with ❤️ during the Google AI Agents Intensive 2025.
