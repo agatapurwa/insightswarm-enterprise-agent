@@ -108,11 +108,17 @@ docker run -p 8080:8080 insightswarm
 
 ## 📂 Repository Structure
 ├── insightswarm.ipynb    # Main Logic & Agent Definitions
+
 ├── agent_manifest.json   # Cloud Deployment Configuration
+
 ├── Dockerfile            # Production Container Setup
+
 ├── requirements.txt      # Dependencies
+
 ├── sales_warehouse.db    # (Generated) SQLite Simulation Data
+
 ├── dashboard.png         # (Generated) Visualization Artifact
+
 └── README.md             # Documentation
 
 ## 🧪 Example Scenario
@@ -122,12 +128,9 @@ User Query:
 
 Agent Actions:
 
-1 Guardrails: Scan input for injection attacks (Passed).
-
+1. Guardrails: Scan input for injection attacks (Passed).
 2. Memory Retrieval: Recalls "East region had supply chain issues in Q3."
-
 3. Data Engineer: Executes SELECT product, SUM(amount) FROM sales...
-
 4. Viz Loop:
 
    * Expert generates code.
